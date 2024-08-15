@@ -1,6 +1,6 @@
 import useThemeSwitcher from "../../hooks/useThemeSwitcher";
 import { FiArrowDownCircle } from "react-icons/fi";
-import developerLight from "../../assets/developer.svg";
+// import developerLight from "../../assets/developer.svg";
 import developerDark from "../../assets/developer-dark.svg";
 import { motion } from "framer-motion";
 import Button from "../reusable/Button";
@@ -31,9 +31,9 @@ const AppBanner = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-      className="sm:container sm:mx-16 flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2"
+      className="sm:container sm:mx-16 flex flex-col sm:justify-between items-center sm:flex-row mt-20 md:mt-2"
     >
-      <div className=" w-full md:w-1/3 text-left">
+      <div className=" w-full md:w-1/3 text-left p-4 ">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

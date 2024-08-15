@@ -4,9 +4,9 @@ const Navbar = ({ toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-lg">
+    <nav className="fixed w-full z-10 transparent -mt-20 sm:-mt-2 bg-white dark:bg-gray-800 shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20 sm:h-14">
           <div className="flex-shrink-0">
             <a
               href="/"
@@ -36,9 +36,6 @@ const Navbar = ({ toggleTheme }) => {
             >
               Contact Me
             </a>
-            {/* <button onClick={toggleTheme} className="text-gray-900 dark:text-white">
-              Toggle Theme
-            </button> */}
           </div>
           <div className="md:hidden">
             <button
@@ -70,12 +67,6 @@ const Navbar = ({ toggleTheme }) => {
           >
             Contact Me
           </a>
-          {/* <button
-            onClick={toggleTheme}
-            className="block w-full text-left px-2 py-1 text-sm text-gray-900 dark:text-white"
-          >
-            Toggle Theme
-          </button> */}
         </div>
       )}
     </nav>

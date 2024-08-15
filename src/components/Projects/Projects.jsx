@@ -4,6 +4,7 @@ import GitRepoVue from "../../assets/GitRepoVue.jpg";
 import GitRepoReact from "../../assets/GitRepoReact.jpg";
 import TimeZone from "../../assets/TimeZoneConverter.jpg";
 import TodoApp from "../../assets/TodoApp.jpg";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -60,12 +61,15 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="bg-black text-white py-20" id="project">
+    <div className="bg-black text-white py-20" id="projects">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="slider container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: -180 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
               key={project.id}
               className="bg-gray-800 p-6 rounded-lg hover:shadow-lg 
             transform transition-transform duration-300 hover:scale-105"
@@ -92,14 +96,14 @@ const Projects = () => {
                 <a
                   href={project.demo}
                   className="inline-block bg-gradient-to-r 
-              from-blue-400 to-indigo-500 text-white px-4 py-2 rounded-full"
+                  from-blue-400 to-indigo-500 text-white px-4 py-2 rounded-full"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Demo
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -108,3 +112,51 @@ const Projects = () => {
 };
 
 export default Projects;
+
+// import React from "react";
+// import Slider from "react-slick";
+
+// function MultipleItems() {
+//   const settings = {
+//     dots: true,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 3,
+//     slidesToScroll: 3
+//   };
+//   return (
+//     <div className="slider-container">
+//       <Slider {...settings}>
+//         <div>
+//           <h3>1</h3>
+//         </div>
+//         <div>
+//           <h3>2</h3>
+//         </div>
+//         <div>
+//           <h3>3</h3>
+//         </div>
+//         <div>
+//           <h3>4</h3>
+//         </div>
+//         <div>
+//           <h3>5</h3>
+//         </div>
+//         <div>
+//           <h3>6</h3>
+//         </div>
+//         <div>
+//           <h3>7</h3>
+//         </div>
+//         <div>
+//           <h3>8</h3>
+//         </div>
+//         <div>
+//           <h3>9</h3>
+//         </div>
+//       </Slider>
+//     </div>
+//   );
+// }
+
+// export default MultipleItems;
