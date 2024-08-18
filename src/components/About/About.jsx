@@ -14,22 +14,24 @@ const About = () => {
           <div className="flex-1">
             <div className="text-justify">
               <p className="text-lg mb-8">
-                I am a software engineering web developer with a passion for
-                creating beautiful and functional websites. I have experience
-                with HTML, CSS, JavaScript, React, TailwindCss, Vuejs,
-                Typescript, and Nextjs. I am always eager to learn new
-                technologies and improve my skills. I am a quick learner and a
-                team player who is always ready to take on new challenges. I am
-                looking for an opportunity to work with a team of talented
-                developers and contribute to exciting projects.
+                I&apos;m a software engineer passionate about crafting beautiful
+                and functional websites. With experience in HTML, CSS,
+                JavaScript, React, Tailwind CSS, Vue.js, TypeScript, and
+                Next.js, I&apos;m constantly eager to learn new technologies and
+                enhance my skills. As a quick learner and collaborative team
+                player, I&apos;m always ready to embrace new challenges.
+                I&apos;m open to working with a talented team of developers and
+                contributing to exciting projects.
               </p>
+
               <p className="text-lg mb-8">
-                I have a strong background in creating visually appealing and
-                user-friendly web experiences. I am motivated to find a role
-                where I can challenge myself and provide value to website users.
-                I am excited to bring my knowledge and experience to a team and
-                contribute to a company&apos;s success.
+                I have a strong foundation in building visually appealing and
+                user-friendly web experiences. I&apos;m driven to find a role
+                where I can push my limits and deliver value to website users.
+                I&apos;m excited to bring my expertise to a team and contribute
+                to a company&apos;s success.
               </p>
+
               <p className="text-lg mb-8">
                 I am also passionate about sharing knowledge, documentation, web
                 engineering, Jamstack, headless commerce, and others.

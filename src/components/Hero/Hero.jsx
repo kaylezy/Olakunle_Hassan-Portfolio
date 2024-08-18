@@ -60,7 +60,7 @@ const AppBanner = () => {
           }}
           className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
         >
-          A Software Engineer
+          Software Engineer
         </motion.p>
         <motion.p
           initial={{ opacity: 0 }}
@@ -72,7 +72,7 @@ const AppBanner = () => {
           }}
           className="font-general-medium mt-4 text-md md:text-md lg:text-md xl:text-2xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
         >
-          I specialize in building modern and responsive web applications.
+          Specialize in building modern and responsive web applications.
         </motion.p>
         <div className="flex justify-center space-x-8">
           <motion.div

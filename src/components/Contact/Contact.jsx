@@ -64,15 +64,15 @@ const Contact = () => {
                 >
                   Follow me
                 </p>
-                <ul className="flex gap-4 sm:gap-8">
+                <ul className="flex gap-10 sm:gap-10">
                   {socialLinks.map((link) => (
                     <a
                       href={link.url}
                       target="__blank"
                       key={link.id}
-                      className="text-3xl font-bold bg-clip-text bg-gradient-to-r 
+                      className="text-3xl pt-6 font-bold bg-clip-text bg-gradient-to-r 
             from-blue-400 to-indigo-500 mb-4"
-                    >
+                    > 
                       <i className="text-xl sm:text-2xl md:text-3xl">
                         {link.icon}
                       </i>
