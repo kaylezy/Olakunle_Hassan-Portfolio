@@ -3,7 +3,7 @@ import UrlShortening from "../../assets/UrlShorteningApp.jpg";
 import GitRepoVue from "../../assets/GitRepoVue.jpg";
 import GitRepoReact from "../../assets/GitRepoReact.jpg";
 import TimeZone from "../../assets/TimeZoneConverter.jpg";
-import TodoApp from "../../assets/TodoApp.jpg";
+import Crowdfunding from "../../assets/crowdfund.jpg";
 import { motion } from "framer-motion";
 
 const projects = [
@@ -29,6 +29,16 @@ const projects = [
   },
   {
     id: 3,
+    name: "Crowdfunding Landing Page",
+    description:
+      "This project is a landing page for a crowdfunding platform, from frontend mentor.",
+    technologies: "React Js and Tailwindcss",
+    image: Crowdfunding,
+    github: "https://github.com/kaylezy/crowdfunding",
+    demo: "https://crowdfunding-lyart-beta.vercel.app/",
+  },
+  {
+    id: 4,
     name: "React GitRepo",
     description:
       "A web application created to fetch the github repositories of users, built with reactjs",
@@ -38,7 +48,7 @@ const projects = [
     demo: "https://github-repo-api-fetch.netlify.app/",
   },
   {
-    id: 4,
+    id: 5,
     name: "Time Zone",
     description:
       "A simple web application that allows users to view the current time in different timezones around the world.",
@@ -46,16 +56,6 @@ const projects = [
     image: TimeZone,
     github: "https://github.com/kaylezy/time-zone",
     demo: "https://time-zone-conversion.netlify.app/",
-  },
-  {
-    id: 5,
-    name: "Todo App",
-    description:
-      "This project was created using vanilla Js with a vite bundler to run the project.",
-    technologies: "HTML, CSS and JS",
-    image: TodoApp,
-    github: "https://github.com/kaylezy/my-todo-app",
-    demo: "https://my-todo-app-kay.netlify.app/",
   },
 ];
 
@@ -112,4 +112,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
