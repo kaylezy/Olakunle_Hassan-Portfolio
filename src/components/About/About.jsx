@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImage from "../../assets/hero-image.jpg";
+import HeroImage from "../../assets/about-image.jpg";
 
 const About = () => {
   return (
@@ -8,9 +8,10 @@ const About = () => {
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           <img
             src={HeroImage}
-            alt=""
-            className="w-96 rounded object-cover mb-8 md:mb-0 rounded-t-full"
+            alt="hero-image"
+            className="w-96 rounded object-cover rounded-t-full md:rounded-none md:rounded-tr-[250px] scale-x-[-1]"
           />
+          <div className="relative top-80 right-[420px]  bg-black w-20 h-5" />
           <div className="flex-1">
             <div className="text-justify">
               <p className="text-lg mb-8">
