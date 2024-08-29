@@ -9,7 +9,7 @@ const About = () => {
           <img
             src={HeroImage}
             alt="hero-image"
-            className="w-96 rounded object-cover  scale-x-[-1]"
+            className="w-96 rounded object-cover  scale-x-[-1] md:mr-0 mr-20"
             width={250}
             height={400}
           />
