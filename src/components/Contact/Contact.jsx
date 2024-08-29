@@ -24,7 +24,7 @@ const socialLinks = [
 
 const Contact = () => {
   return (
-    <div className="bg-gray-900 text-white py-20" id="contact">
+    <div className="bg-gray-950 text-white py-20" id="contact">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <h2 className="text-4xl font-bold text-center mb-12">Get in touch</h2>
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
@@ -72,7 +72,7 @@ const Contact = () => {
                       key={link.id}
                       className="text-3xl pt-6 font-bold bg-clip-text bg-gradient-to-r 
             from-blue-400 to-indigo-500 mb-4"
-                    > 
+                    >
                       <i className="text-xl sm:text-2xl md:text-3xl">
                         {link.icon}
                       </i>

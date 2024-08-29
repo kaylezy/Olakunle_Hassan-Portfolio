@@ -3,13 +3,15 @@ import HeroImage from "../../assets/about-image.jpg";
 
 const About = () => {
   return (
-    <div id="about" className="bg-gray-800 text-white text-center py-20">
+    <div id="about" className="bg-black text-white text-center py-20">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           <img
             src={HeroImage}
             alt="hero-image"
-            className="w-96 rounded object-cover rounded-t-full md:rounded-none md:rounded-tr-[250px] scale-x-[-1]"
+            className="w-96 rounded object-cover  scale-x-[-1]"
+            width={250}
+            height={400}
           />
           <div className="relative top-80 right-[420px]  bg-black w-20 h-5" />
           <div className="flex-1">

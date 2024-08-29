@@ -4,7 +4,6 @@ import GitRepoVue from "../../assets/GitRepoVue.jpg";
 import GitRepoReact from "../../assets/GitRepoReact.jpg";
 import TimeZone from "../../assets/TimeZoneConverter.jpg";
 import Crowdfunding from "../../assets/crowdfund.jpg";
-import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -61,15 +60,12 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="bg-black text-white py-20" id="projects">
+    <div className="bg-slate-900 text-white py-20" id="projects">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
         <div className="slider container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <motion.div
-              initial={{ opacity: 0, y: -180 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
+            <div
               key={project.id}
               className="bg-gray-800 p-6 rounded-lg hover:shadow-lg 
             transform transition-transform duration-300 hover:scale-105"
@@ -103,7 +99,7 @@ const Projects = () => {
                   Demo
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
