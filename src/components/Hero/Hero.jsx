@@ -1,11 +1,11 @@
 import useThemeSwitcher from "../../hooks/useThemeSwitcher";
 import { FiArrowDownCircle } from "react-icons/fi";
-// import developerLight from "../../assets/developer.svg";
 import developerDark from "../../assets/developer-dark.svg";
 import { motion } from "framer-motion";
 import Button from "../reusable/Button";
 import { useState } from "react";
 import HireMeModal from "../HireMeModal/HireMeModal";
+import Typewriter from "../../hooks/typewriter";
 
 const AppBanner = () => {
   // const [showMenu, setShowMenu] = useState(false);
@@ -33,7 +33,7 @@ const AppBanner = () => {
       transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       className="sm:container sm:mx-16 flex flex-col sm:justify-between items-center sm:flex-row mt-20 md:mt-2"
     >
-      <div className=" w-full md:w-1/3 text-left p-4 ">
+      <div className=" w-full md:w-[40rem] text-left p-4">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -42,13 +42,13 @@ const AppBanner = () => {
             duration: 0.9,
             delay: 0.1,
           }}
-          className="font-general-semibold text-2xl lg:text-3xl xl:text-5xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase "
+          className="font-general-semibold text-2xl lg:text-3xl xl:text-5xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
         >
           Hi 👋🏽, I&apos;m
           <span className="text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-400 to-purple-500">
-            {" "}
-            Olakunle Hassan
+            
           </span>
+          <Typewriter text="Olakunle Hassan" />
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}

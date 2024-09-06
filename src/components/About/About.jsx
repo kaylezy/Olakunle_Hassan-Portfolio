@@ -1,5 +1,14 @@
 import React from "react";
-import HeroImage from "../../assets/about-image.jpg";
+import HeroImage from "../../assets/about2-mage.jpg";
+import { FaHtml5 } from "react-icons/fa6";
+import { IoLogoCss3 } from "react-icons/io5";
+import { SiJavascript } from "react-icons/si";
+import { BsBootstrapFill } from "react-icons/bs";
+import { FaReact } from "react-icons/fa";
+import { SiTailwindcss } from "react-icons/si";
+import { IoLogoVue } from "react-icons/io5";
+import { SiTypescript } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 
 const About = () => {
   return (
@@ -9,7 +18,7 @@ const About = () => {
           <img
             src={HeroImage}
             alt="hero-image"
-            className="w-96 rounded object-cover  scale-x-[-1] md:mr-0 mr-20"
+            className="w-96 rounded object-cover  scale-x-[-1] md:mr-0 "
             width={250}
             height={400}
           />
@@ -40,105 +49,63 @@ const About = () => {
                 engineering, Jamstack, headless commerce, and others.
               </p>
             </div>
-            <div className="flex md:flex-row items-center flex-col text-left space-x-4 p-4">
-              <div className="w-full space-y-2">
-                <div className="flex items-center">
-                  <label htmlFor="htmlandcss" className="w-3/12">
-                    HTML & CSS
-                  </label>
-                  <div className="grow bg-gray-600 rounded-full h-2.5">
-                    <div
-                      className="bg-gradient-to-r from-blue-400 to-indigo-500 h-2.5 rounded-full 
-                    transform transition-transform duration-300 hover:scale-105 w-11/12"
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <label htmlFor="javascript" className="w-3/12">
-                    Javascript
-                  </label>
-                  <div className="grow bg-gray-600 rounded-full h-2.5">
-                    <div
-                      className="bg-gradient-to-r from-blue-400 to-indigo-500 h-2.5 rounded-full 
-                    transform transition-transform duration-300 hover:scale-105 w-9/12"
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <label htmlFor="typescript" className="w-3/12">
-                    Typescript
-                  </label>
-                  <div className="grow bg-gray-600 rounded-full h-2.5">
-                    <div
-                      className="bg-gradient-to-r from-blue-400 to-indigo-500 h-2.5 rounded-full 
-                    transform transition-transform duration-300 hover:scale-105 w-8/12"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full space-y-2">
-                <div className="flex items-center">
-                  <label htmlFor="reactjs" className="w-3/12">
-                    React JS
-                  </label>
-                  <div className="grow bg-gray-600 rounded-full h-2.5">
-                    <div
-                      className="bg-gradient-to-r from-blue-400 to-indigo-500 h-2.5 rounded-full 
-                    transform transition-transform duration-300 hover:scale-105 w-10/12"
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <label htmlFor="vue" className="w-3/12">
-                    Vue JS
-                  </label>
-                  <div className="grow bg-gray-600 rounded-full h-2.5">
-                    <div
-                      className="bg-gradient-to-r from-blue-400 to-indigo-500 h-2.5 rounded-full 
-                    transform transition-transform duration-300 hover:scale-105 w-9/12"
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <label htmlFor="nextjs" className="w-3/12">
-                    Next JS
-                  </label>
-                  <div className="grow bg-gray-600 rounded-full h-2.5">
-                    <div
-                      className="bg-gradient-to-r from-blue-400 to-indigo-500 h-2.5 rounded-full 
-                    transform transition-transform duration-300 hover:scale-105 w-10/12"
-                    ></div>
-                  </div>
-                </div>
-              </div>
+            <div className="text-bold text-left ">
+              <p>Some of the the skills have acquired on this journey...</p>
             </div>
-            <div className="mt-12 flex justify-between text-center">
-              <div>
-                <h3
-                  className="text-2xl font-bold text-transparent bg-clip-text 
-                bg-gradient-to-r from-green-400 to-blue-500"
-                >
-                  2+
-                </h3>
-                <p>Years Experience</p>
+            <div className="mt-12 flex justify-between text-center cursor-pointer">
+              <div
+                className="text-red-500 text-3xl font-bold hover:shadow-lg 
+            transform transition-transform duration-300 hover:scale-150"
+              >
+                <FaHtml5 />
               </div>
-              <div>
-                <h3
-                  className="text-2xl font-bold text-transparent bg-clip-text 
-                bg-gradient-to-r from-green-400 to-blue-500"
-                >
-                  5+
-                </h3>
-                <p>Projects Completed</p>
+              <div
+                className="text-blue-500 text-3xl font-bold hover:shadow-lg 
+            transform transition-transform duration-300 hover:scale-150"
+              >
+                <IoLogoCss3 />
               </div>
-              <div>
-                <h3
-                  className="text-2xl font-bold text-transparent bg-clip-text 
-                bg-gradient-to-r from-green-400 to-blue-500"
-                >
-                  6+
-                </h3>
-                <p>Github Star</p>
+              <div
+                className="text-yellow-500 text-3xl font-bold hover:shadow-lg 
+            transform transition-transform duration-300 hover:scale-150"
+              >
+                <SiJavascript />
+              </div>
+              <div
+                className="text-purple-500 text-3xl font-bold hover:shadow-lg 
+            transform transition-transform duration-300 hover:scale-150"
+              >
+                <BsBootstrapFill />
+              </div>
+              <div
+                className="text-cyan-500 text-3xl font-bold hover:shadow-lg 
+            transform transition-transform duration-300 hover:scale-150"
+              >
+                <FaReact />
+              </div>
+              <div
+                className="text-cyan-500 text-3xl font-bold hover:shadow-lg 
+            transform transition-transform duration-300 hover:scale-150"
+              >
+                <SiTailwindcss />
+              </div>
+              <div
+                className="text-green-500 text-3xl font-bold hover:shadow-lg 
+            transform transition-transform duration-300 hover:scale-150"
+              >
+                <IoLogoVue />
+              </div>
+              <div
+                className="text-blue-500 text-3xl font-bold hover:shadow-lg 
+            transform transition-transform duration-300 hover:scale-150"
+              >
+                <SiTypescript />
+              </div>
+              <div
+                className="text-white text-3xl font-bold hover:shadow-lg 
+            transform transition-transform duration-300 hover:scale-150"
+              >
+                <TbBrandNextjs />
               </div>
             </div>
           </div>
