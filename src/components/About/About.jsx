@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImage from "../../assets/about2-mage.jpg";
+import HeroImage from "../../assets/about1-image.jpg";
 import { FaHtml5 } from "react-icons/fa6";
 import { IoLogoCss3 } from "react-icons/io5";
 import { SiJavascript } from "react-icons/si";
@@ -18,7 +18,8 @@ const About = () => {
           <img
             src={HeroImage}
             alt="hero-image"
-            className="w-96 rounded object-cover  scale-x-[-1] md:mr-0 "
+            className="w-96 rounded object-cover  scale-x-[-1] md:mr-0 hover:shadow-lg 
+            transform transition-transform duration-300 hover:scale-x-105"
             width={250}
             height={400}
           />
