@@ -62,7 +62,7 @@ const Projects = () => {
   return (
     <div className="bg-slate-900 text-white py-20" id="projects">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
-        <h2 className="text-4xl font-bold text-center mb-12">Some of the Projects I worked on</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Some of the Projects I worked on</h2>
         <div className="slider container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div

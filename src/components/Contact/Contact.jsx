@@ -26,7 +26,7 @@ const Contact = () => {
   return (
     <div className="bg-gray-950 text-white py-20" id="contact">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
-        <h2 className="text-4xl font-bold text-center mb-12">Get in touch and let&apos;s build something together</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Get in touch and let&apos;s build something together</h2>
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           <div className="flex-1">
             <h3
