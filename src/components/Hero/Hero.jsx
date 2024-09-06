@@ -46,9 +46,9 @@ const AppBanner = () => {
         >
           Hi 👋🏽, I&apos;m
           <span className="text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-400 to-purple-500">
-            
+            {" "}
+            <Typewriter text="Olakunle Hassan" />
           </span>
-          <Typewriter text="Olakunle Hassan" />
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -72,7 +72,10 @@ const AppBanner = () => {
           }}
           className="font-general-medium mt-4 text-md md:text-md lg:text-md xl:text-2xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
         >
-          Specialize in building modern and responsive web applications.
+          Passionate about leveraging the latest web technologies to build
+          dynamic, scalable applications that not only meet current industry
+          standards but anticipate future trends in responsive design and user
+          interaction.
         </motion.p>
         <div className="flex justify-center space-x-8">
           <motion.div
