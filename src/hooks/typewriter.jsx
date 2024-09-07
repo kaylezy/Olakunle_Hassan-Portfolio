@@ -12,16 +12,18 @@ const Typewriter = ({ text }) => {
         setDisplayedText(text.substring(0, index + 1));
         setIndex(index + 1);
       }, 200); // Typing speed
-    } else if (isDeleting && index > 0) {
+    } else if (isDeleting && index > 1) {
+      // Change condition to index > 1
       timeout = setTimeout(() => {
         setDisplayedText(text.substring(0, index - 1));
         setIndex(index - 1);
       }, 200); // Deleting speed
     } else if (index === text.length) {
       timeout = setTimeout(() => setIsDeleting(true), 2000); // Pause before deleting
-    } else if (index === 0 && isDeleting) {
+    } else if (index === 1 && isDeleting) {
+      // Change condition to index === 1
       setIsDeleting(false);
-      timeout = setTimeout(() => setIndex(0), 1000); // Pause before retyping
+      timeout = setTimeout(() => setIndex(1), 1000); // Pause before retyping
     }
 
     return () => clearTimeout(timeout);

@@ -33,7 +33,7 @@ const AppBanner = () => {
       transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       className="sm:container sm:mx-16 flex flex-col sm:justify-between items-center sm:flex-row mt-20 md:mt-2"
     >
-      <div className=" w-full md:w-[40rem] text-left p-4">
+      <div className=" w-full md:w-[42rem] text-left p-4 ">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
