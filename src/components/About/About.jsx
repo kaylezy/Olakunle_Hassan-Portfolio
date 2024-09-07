@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImage from "../../assets/imagebeachedit.jpg";
+import HeroImage from "../../assets/imagebeach.jpg";
 
 import IconSlider from "../../hooks/iconSlider";
 
@@ -12,7 +12,7 @@ const About = () => {
             <img
               src={HeroImage}
               alt="hero-image"
-              className="w-[500px] rounded-t-full object-cover  scale-x-[-1] md:mr-0 hover:shadow-lg 
+              className="w-[450px] rounded-t-full object-cover  scale-x-[-1] md:mr-0 hover:shadow-lg 
             transform transition-transform duration-300 hover:scale-x-105"
               width={250}
               height={400}
