@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Logo from "../../../public/Dev-kngkay.png";
 
 const Navbar = ({ toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +11,13 @@ const Navbar = ({ toggleTheme }) => {
           <div className="flex-shrink-0">
             <a
               href="/"
-              className="text-2xl font-bold text-purple-500 dark:text-indigo-500 "
+              className="text-2xl font-bold text-purple-500 dark:text-indigo-500 flex  "
             >
+              <img
+                src={Logo}
+                alt="logo"
+                className="h-10 w-10 rounded-md mr-2"
+              />
               <span className="text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-400 to-purple-500">
                 Dev-Kngkay
               </span>

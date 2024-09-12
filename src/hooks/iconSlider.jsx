@@ -43,20 +43,12 @@ const IconSlider = () => {
     return () => clearInterval(interval);
   }, []);
 
-  //   const goToPrevious = () => {
-  //     setCurrentIndex((prevIndex) => (prevIndex - 1 + icons.length) % icons.length);
-  //   };
-
-  //   const goToNext = () => {
-  //     setCurrentIndex((prevIndex) => (prevIndex + 1) % icons.length);
-  //   };
-
   return (
     <div className="relative w-full h-24 overflow-hidden">
       {icons.map((iconSet, index) => (
         <div
           key={index}
-          className={`absolute w-96 h-full flex items-center justify-center transition-opacity duration-1000 ${
+          className={`absolute w-[350px] h-full flex items-center justify-center transition-opacity duration-1000 ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -70,18 +62,6 @@ const IconSlider = () => {
           ))}
         </div>
       ))}
-      {/* <button
-        onClick={goToPrevious}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2"
-      >
-        Prev
-      </button>
-      <button
-        onClick={goToNext}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2"
-      >
-        Next
-      </button> */}
     </div>
   );
 };
