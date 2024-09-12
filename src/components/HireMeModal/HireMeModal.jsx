@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiX } from "react-icons/fi";
 import Button from "../../components/reusable/Button";
@@ -5,6 +6,26 @@ import Button from "../../components/reusable/Button";
 const selectOptions = ["Web Application", "Mobile Application", "Branding"];
 
 const HireMeModal = ({ onClose, onRequest }) => {
+  const [status, setStatus] = useState("");
+
+  const submitForm = (ev) => {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action, true);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        setStatus("SUCCESS");
+      } else {
+        setStatus("ERROR");
+      }
+    };
+    xhr.send(data);
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -32,9 +53,9 @@ const HireMeModal = ({ onClose, onRequest }) => {
             </div>
             <div className="modal-body p-5 w-full h-full">
               <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                }}
+                onSubmit={submitForm}
+                action="https://formspree.io/f/xovazewp"
+                method="POST"
                 className="max-w-xl m-4 text-left"
               >
                 <div className="">
@@ -43,7 +64,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
                     id="name"
                     name="name"
                     type="text"
-                    required=""
+                    required
                     placeholder="Name"
                     aria-label="Name"
                   />
@@ -54,7 +75,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
                     id="email"
                     name="email"
                     type="text"
-                    required=""
+                    required
                     placeholder="Email"
                     aria-label="Email"
                   />
@@ -65,7 +86,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
                     id="subject"
                     name="subject"
                     type="text"
-                    required=""
+                    required
                     aria-label="Project Category"
                   >
                     {selectOptions.map((option) => (
@@ -90,7 +111,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 
                 <div className="mt-6 pb-4 sm:pb-1">
                   <span
-                    onClick={onClose}
+                    // onClick={onClose}
                     type="submit"
                     className="px-4
 											sm:px-6
@@ -103,9 +124,20 @@ const HireMeModal = ({ onClose, onRequest }) => {
 											focus:ring-1 focus:ring-indigo-900 duration-500"
                     aria-label="Submit Request"
                   >
-                    <Button title="Send Request" />
+                    <Button type="submit" title="Send Request" />
                   </span>
                 </div>
+                {status === "SUCCESS" && (
+                  <p className="text-green-500 text-center">
+                    Thank you for reaching out! 👍🏽 I&apos;ll respond to your
+                    message soon.
+                  </p>
+                )}
+                {status === "ERROR" && (
+                  <p className="text-red-500 text-center">
+                    Oops! There was an error.
+                  </p>
+                )}
               </form>
             </div>
           </div>

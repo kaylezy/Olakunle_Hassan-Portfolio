@@ -1,8 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import { FaEnvelope, FaMapMarkedAlt, FaPhone } from "react-icons/fa";
 import Button from "../reusable/Button";
 import FormInput from "../reusable/FormInput";
-import { FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { BsTwitterX } from "react-icons/bs";
 
 const socialLinks = [
   {
@@ -12,7 +13,7 @@ const socialLinks = [
   },
   {
     id: 2,
-    icon: <FiTwitter />,
+    icon: <BsTwitterX />,
     url: "https://twitter.com/iam_kaylezy",
   },
   {
@@ -23,6 +24,27 @@ const socialLinks = [
 ];
 
 const Contact = () => {
+  const [status, setStatus] = useState("");
+
+  const submitForm = (ev) => {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action, true);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        setStatus("SUCCESS");
+      } else {
+        setStatus("ERROR");
+      }
+    };
+    xhr.send(data);
+  };
+
   return (
     <div className="bg-gray-950 text-white py-20" id="contact">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
@@ -38,8 +60,10 @@ const Contact = () => {
               Let&apos;s Talk
             </h3>
             <p>
-              I&apos;m open to discussing web development projects or
-              partnership opportunities.
+              I&apos;m eager to explore web development collaborations and new
+              opportunities. Whether you have a specific project in mind or a
+              business concept to discuss, I&apos;m ready to engage promptly and
+              enthusiastically with the details of your proposal.
             </p>
             <div className="mb-4 mt-8">
               <FaEnvelope className="inline-block text-indigo-400 mr-2"></FaEnvelope>
@@ -87,9 +111,9 @@ const Contact = () => {
           <div className="flex-1 w-full">
             <div className="leading-loose">
               <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                }}
+                onSubmit={submitForm}
+                action="https://formspree.io/f/xovazewp"
+                method="POST"
                 className="space-y-4"
               >
                 <FormInput
@@ -146,6 +170,17 @@ const Contact = () => {
                     aria-label="Send Message"
                   />
                 </div>
+                {status === "SUCCESS" && (
+                  <p className="text-green-500 text-center">
+                    Thank you for reaching out! 👍🏽 I&apos;ll respond to your
+                    message soon.
+                  </p>
+                )}
+                {status === "ERROR" && (
+                  <p className="text-red-500 text-center">
+                    Oops! There was an error.
+                  </p>
+                )}
               </form>
             </div>
           </div>
