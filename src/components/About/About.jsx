@@ -18,7 +18,7 @@ const About = () => {
             />
           </div>
 
-          <div className="flex-1">
+          <div className="flex-1 text-gray-300">
             <div className="text-justify">
               <h2 className="text-xl font-bold pb-4">About Me:</h2>
               <p className="text-lg mb-8">
@@ -62,13 +62,7 @@ const About = () => {
                 CodeSandBox, CodePen .
               </p>
             </div>
-            <div className="text-bold text-left ">
-              <h2 className="text-xl font-bold pb-2">Hobbies:</h2>
-              <p className="text-lg mb-8 italic">
-                Playing Video Games, Watching Football, Listening to Music,
-                Attending Tech Events etc.{" "}
-              </p>
-            </div>
+            
           </div>
         </div>
       </div>

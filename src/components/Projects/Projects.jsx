@@ -59,7 +59,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="bg-slate-900 text-white py-20" id="projects">
+    <div className="bg-slate-900 text-gray-300 py-20" id="projects">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
           Some of the Projects I worked on

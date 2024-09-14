@@ -31,9 +31,9 @@ const AppBanner = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-      className="sm:container sm:mx-16 flex flex-col sm:justify-between items-center sm:flex-row mt-20 md:mt-2"
+      className="sm:container sm:mx-16 flex flex-col sm:justify-between items-center sm:flex-row mt-20 md:mt-2 text-gray-300"
     >
-      <div className=" w-full md:w-[42rem] text-left p-4 ">
+      <div className=" w-full md:w-[42rem] text-left p-4 text-gray-300">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -58,7 +58,7 @@ const AppBanner = () => {
             duration: 0.9,
             delay: 0.2,
           }}
-          className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
+          className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-300"
         >
           Software Engineer (Frontend)
         </motion.p>
@@ -70,7 +70,7 @@ const AppBanner = () => {
             duration: 0.9,
             delay: 0.2,
           }}
-          className="font-general-medium mt-4 text-md md:text-md lg:text-md xl:text-2xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
+          className="font-general-medium mt-4 text-md md:text-md lg:text-md xl:text-2xl text-center sm:text-left leading-normal text-gray-300"
         >
           Passionate about leveraging the latest web technologies to build
           dynamic, scalable applications that not only meet current industry
@@ -89,8 +89,8 @@ const AppBanner = () => {
             className="flex justify-center sm:block"
           >
             <a
-              download="Olakunle-Hassan-Resume.pdf"
-              href="/files/Olakunle-Hassan-Resume.pdf"
+              download="Olakunle-Hassan.pdf"
+              href="/files/Olakunle-Hassan.pdf"
               className="font-general-medium flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
               aria-label="Download Resume"
             >
