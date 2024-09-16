@@ -46,7 +46,7 @@ const Navbar = ({ toggleTheme }) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-900 dark:text-white hover:text-purple-500 focus:outline-none"
+              className="text-gray-900 text-2xl dark:text-white hover:text-purple-500 focus:outline-none"
             >
               ☰
             </button>
