@@ -1,8 +1,22 @@
-# React + Vite
+# Olakunle Hassan's Frontend Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my frontend portfolio! Here, you'll find a collection of my projects, showcasing my skills and expertise in web development.
 
-Currently, two official plugins are available:
+## About Me
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I am an entry-level Frontend Engineer with a passion for creating intuitive and responsive web applications. With a solid foundation in React, TypeScript, and modern web technologies, I enjoy building user-friendly, accessible, and performance-driven web apps. My background in accounting sharpens my attention to detail and problem-solving skills.
+
+## Skills
+
+- **Languages**: JavaScript, TypeScript, HTML, CSS
+- **Frameworks/Libraries**: React, Tailwind CSS
+- **Tools**: Git, Firebase, Progressive Web Applications (PWAs)
+- **Other**: Responsive Design, Accessibility, Performance Optimization
+
+## Contact
+
+Feel free to reach out to me via LinkedIn or Email.
+
+---
+
+Thank you for visiting my portfolio! I look forward to connecting with you.
