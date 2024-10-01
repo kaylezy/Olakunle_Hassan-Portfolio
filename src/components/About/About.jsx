@@ -11,7 +11,7 @@ const About = () => {
             <img
               src={HeroImage}
               alt="hero-image"
-              className="w-[450px] md:h-[800px] rounded-t-full object-cover  scale-x-[-1] md:mr-0 hover:shadow-lg 
+              className="w-[450px] md:w-[250px] lg:w-[450px] md:h-[800px] rounded-t-full object-cover  scale-x-[-1] md:mr-0 hover:shadow-lg 
             transform transition-transform duration-300 hover:scale-x-105"
               width={250}
               height={400}

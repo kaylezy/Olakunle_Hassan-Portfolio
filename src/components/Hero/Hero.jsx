@@ -31,9 +31,9 @@ const AppBanner = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-      className="sm:container sm:mx-16 flex flex-col sm:justify-between items-center sm:flex-row mt-20 md:mt-2 text-gray-300"
+      className="sm:container sm:mx-16 flex flex-col sm:justify-between items-center sm:flex-row mt-20 md:mt-2 md:pt-10  text-gray-300"
     >
-      <div className=" w-full md:w-[42rem] text-left p-4 text-gray-300">
+      <div className=" w-full md:w-[48rem] text-left p-4 text-gray-300">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -131,7 +131,7 @@ const AppBanner = () => {
         <img
           src={activeTheme === "dark" ? developerDark : developerDark}
           alt="Developer"
-          className="w-auto sm:w-56 md:w-60 lg:w-56 xl:w-96 2xl:w-11/12"
+          className="w-auto sm:w-56 md:w-96 lg:w-56 xl:w-11/12"
         />
       </motion.div>
       <div>
