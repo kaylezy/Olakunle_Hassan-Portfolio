@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Logo from "../../../public/Dev-kngkay.png";
 
 const Navbar = ({ toggleTheme }) => {
@@ -16,9 +16,9 @@ const Navbar = ({ toggleTheme }) => {
               <img
                 src={Logo}
                 alt="logo"
-                className="h-10 w-10 rounded-md mr-2"
+                className="h-10 w-10 rounded-md mr-2 animate-pulse"
               />
-              <span className="text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-400 to-purple-500">
+              <span className="text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse">
                 Dev-Kngkay
               </span>
             </a>
