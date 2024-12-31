@@ -1,12 +1,44 @@
+import EasyServe from "../../assets/easyserve.jpg";
+import RenergyHub from "../../assets/renergyhub.jpg";
+import Upgrade from "../../assets/upgrade.jpg";
 import UrlShortening from "../../assets/UrlShorteningApp.jpg";
 import GitRepoVue from "../../assets/GitRepoVue.jpg";
-import GitRepoReact from "../../assets/GitRepoReact.jpg";
-import TimeZone from "../../assets/TimeZoneConverter.jpg";
 import Crowdfunding from "../../assets/crowdfund.jpg";
 
 const projects = [
   {
     id: 1,
+    name: "EasyServe",
+    description:
+      "It is a Url Shortening service that allows you to shorten any long Url to a manageable and user-friendly link. ",
+    technologies: "NextJs with typescrit and tailwindcss",
+    image: EasyServe,
+    github: "https://github.com/EasyServe3/EasyserveApp_PWA",
+    demo: "https://www.easyserve.com.ng/",
+  },
+  {
+    id: 2,
+    name: "RenergyHub",
+    description:
+      "A web application created to fetch the github repositories of users, built with vuejs",
+    technologies: "Vue Js and Javascript",
+    image: RenergyHub,
+    github:
+      "https://github.com/InternPulse/renergy-hub-frontend/tree/feature-base",
+    demo: "https://www.renergyhub.com.ng//",
+  },
+  {
+    id: 3,
+    name: "Upgrade Landing Page",
+    description:
+      "This project is a landing page for a crowdfunding platform, from frontend mentor.",
+    technologies: "React Js and Tailwindcss",
+    image: Upgrade,
+    github: "https://github.com/kaylezy/FinTech-Landing-Page",
+    demo: "https://fintech-landingpage.vercel.app/",
+  },
+  {
+    id: 4,
     name: "CutFitt_URL",
     description:
       "It is a Url Shortening service that allows you to shorten any long Url to a manageable and user-friendly link. ",
@@ -16,7 +48,7 @@ const projects = [
     demo: "https://cutfitt-url.vercel.app/",
   },
   {
-    id: 2,
+    id: 5,
     name: "Vue GitRepo",
     description:
       "A web application created to fetch the github repositories of users, built with vuejs",
@@ -26,7 +58,7 @@ const projects = [
     demo: "https://vue-github-repo-fetch.netlify.app/",
   },
   {
-    id: 3,
+    id: 6,
     name: "Crowdfunding Landing Page",
     description:
       "This project is a landing page for a crowdfunding platform, from frontend mentor.",
@@ -34,26 +66,6 @@ const projects = [
     image: Crowdfunding,
     github: "https://github.com/kaylezy/crowdfunding",
     demo: "https://crowdfunding-lyart-beta.vercel.app/",
-  },
-  {
-    id: 4,
-    name: "React GitRepo",
-    description:
-      "A web application created to fetch the github repositories of users, built with reactjs",
-    technologies: "React JS",
-    image: GitRepoReact,
-    github: "https://github.com/kaylezy/github-repo-api-fetch",
-    demo: "https://github-repo-api-fetch.netlify.app/",
-  },
-  {
-    id: 5,
-    name: "Time Zone",
-    description:
-      "A simple web application that allows users to view the current time in different timezones around the world.",
-    technologies: "HTML, CSS and JS",
-    image: TimeZone,
-    github: "https://github.com/kaylezy/time-zone",
-    demo: "https://time-zone-conversion.netlify.app/",
   },
 ];
 
@@ -77,7 +89,18 @@ const Projects = () => {
                 className="rounded-lg mb-4 
               w-full h-48 object-cover"
               />
-              <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
+                <a
+                  href={project.demo}
+                  className="text-blue-400 font-semibold text-sm hover:bg-gradient-to-r 
+              from-blue-400 to-indigo-500 px-4 py-2 rounded-full hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Details
+                </a>
+              </div>
               <p className="text-gray-400 mb-2">{project.description}</p>
               <p className="text-gray-400 mb-4">{project.technologies}</p>
               <div className="flex justify-center space-x-24">
