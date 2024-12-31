@@ -9,5 +9,10 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/components/test/setup.js',
     css: true,
+  },
+  build: {
+    rollupOptions: {
+      external: ['prop-types']
+    }
   }
 })
