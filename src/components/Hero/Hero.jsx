@@ -35,12 +35,12 @@ const AppBanner = () => {
     >
       <div className=" w-full md:w-[48rem] text-left p-4 text-gray-300">
         <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
             ease: "easeInOut",
-            duration: 0.9,
-            delay: 0.1,
+            duration: 1,
+            delay: 0,
           }}
           className="font-general-semibold text-2xl lg:text-3xl xl:text-5xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
         >
@@ -51,24 +51,24 @@ const AppBanner = () => {
           </span>
         </motion.h1>
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
-            ease: "easeInOut",
+            ease: "circIn",
             duration: 0.9,
-            delay: 0.2,
+            delay: 0.1,
           }}
           className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-300"
         >
           Software Engineer (Frontend)
         </motion.p>
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 1, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{
-            ease: "easeInOut",
+            ease: "easeIn",
             duration: 0.9,
-            delay: 0.2,
+            delay: 0.4,
           }}
           className="font-general-medium mt-4 text-md md:text-md lg:text-md xl:text-2xl text-center sm:text-left leading-normal text-gray-300"
         >
@@ -79,8 +79,8 @@ const AppBanner = () => {
         </motion.p>
         <div className="flex justify-center space-x-8">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               ease: "easeInOut",
               duration: 0.9,
@@ -101,8 +101,8 @@ const AppBanner = () => {
             </a>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               ease: "easeInOut",
               duration: 0.9,

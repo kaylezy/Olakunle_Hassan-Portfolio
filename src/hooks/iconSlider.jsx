@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FaHtml5 } from "react-icons/fa6";
 import { IoLogoCss3 } from "react-icons/io5";
 import { SiJavascript } from "react-icons/si";
@@ -11,6 +11,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 import { SiFirebase } from "react-icons/si";
 import { SiCloudinary } from "react-icons/si";
 import { SiShadcnui } from "react-icons/si";
+import { motion } from "framer-motion";
 
 const icons = [
   [
@@ -46,21 +47,29 @@ const IconSlider = () => {
   return (
     <div className="relative w-full h-24 overflow-hidden">
       {icons.map((iconSet, index) => (
-        <div
+        <motion.div
+          
           key={index}
           className={`absolute w-[350px] h-full flex items-center justify-center transition-opacity duration-1000 ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
         >
           {iconSet.map((icon) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 0.9,
+                delay: 0.3,
+              }}
               key={icon.key}
               className="flex-1 flex items-center justify-between"
             >
               {icon}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       ))}
     </div>
   );

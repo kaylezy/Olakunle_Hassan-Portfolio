@@ -4,6 +4,7 @@ import Button from "../reusable/Button";
 import FormInput from "../reusable/FormInput";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { BsTwitterX } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const socialLinks = [
   {
@@ -48,24 +49,57 @@ const Contact = () => {
   return (
     <div className="bg-gray-950 text-gray-300 py-20" id="contact">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            ease: "linear",
+            duration: 0.9,
+            delay: 0.3,
+          }}
+          className="text-3xl md:text-5xl font-bold text-center mb-12"
+        >
           Let&apos;s connect and turn visionary concepts into reality
-        </h2>
+        </motion.h2>
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           <div className="flex-1">
-            <h3
+            <motion.h3
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 0.9,
+                delay: 0.3,
+              }}
               className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r 
             from-blue-400 to-indigo-500 mb-4"
             >
               Let&apos;s Talk
-            </h3>
-            <p>
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 0.9,
+                delay: 0.5,
+              }}
+            >
               I&apos;m eager to explore web development collaborations and new
               opportunities. Whether you have a specific project in mind or a
               business concept to discuss, I&apos;m ready to engage promptly and
               enthusiastically with the details of your proposal.
-            </p>
-            <div className="mb-4 mt-8">
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 0.9,
+                delay: 0.8,
+              }}
+              className="mb-4 mt-8"
+            >
               <FaEnvelope className="inline-block text-indigo-400 mr-2"></FaEnvelope>
               <a
                 href="mailto:kunlex_042003@yahoo.com"
@@ -73,17 +107,44 @@ const Contact = () => {
               >
                 kunlex_042003@yahoo.com
               </a>
-            </div>
-            <div className="mb-4">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 0.9,
+                delay: 1,
+              }}
+              className="mb-4"
+            >
               <FaPhone className="inline-block text-indigo-400 mr-2"></FaPhone>
               <span>+234 802 9732 493</span>
-            </div>
-            <div className="mb-4">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 0.9,
+                delay: 1.2,
+              }}
+              className="mb-4"
+            >
               <FaMapMarkedAlt className="inline-block text-indigo-400 mr-2"></FaMapMarkedAlt>
               <span>Abule-Egba, Lagos, Nigeria</span>
-            </div>
+            </motion.div>
             <div id="socials" className="mt-20">
-              <div className="font-general-regular flex flex-col justify-center items-center mb-12 sm:mb-28">
+              <motion.div
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  ease: "easeInOut",
+                  duration: 0.9,
+                  delay: 1.4,
+                }}
+                className="font-general-regular flex flex-col justify-center items-center mb-12 sm:mb-28"
+              >
                 <p
                   className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r 
             from-blue-400 to-indigo-500 mb-4"
@@ -105,12 +166,19 @@ const Contact = () => {
                     </a>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             </div>
           </div>
           <div className="flex-1 w-full">
             <div className="leading-loose">
-              <form
+              <motion.form
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: "easeInOut",
+                  duration: 0.9,
+                  delay: 1,
+                }}
                 onSubmit={submitForm}
                 action="https://formspree.io/f/xovazewp"
                 method="POST"
@@ -181,7 +249,7 @@ const Contact = () => {
                     Oops! There was an error.
                   </p>
                 )}
-              </form>
+              </motion.form>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import EasyServe from "../../assets/easyserve.jpg";
 import RenergyHub from "../../assets/renergyhub.jpg";
 import Upgrade from "../../assets/upgrade.jpg";
@@ -76,9 +77,18 @@ const Projects = () => {
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
           Some of the Projects I worked on
         </h2>
-        <div className="slider container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          variants={{
+            hidden: { opacity: 0 },
+            show: { opacity: 1, transition: { staggerChildren: 0.4 } },
+          }}
+          initial="hidden"
+          animate="show"
+          className="slider container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {projects.map((project) => (
-            <div
+            <motion.div
+              variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
               key={project.id}
               className="bg-gray-800 p-6 rounded-lg hover:shadow-lg 
             transform transition-transform duration-300 hover:scale-105"
@@ -123,9 +133,9 @@ const Projects = () => {
                   Demo
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
