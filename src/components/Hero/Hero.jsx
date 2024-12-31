@@ -10,7 +10,7 @@ import Typewriter from "../../hooks/typewriter";
 const AppBanner = () => {
   // const [showMenu, setShowMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [activeTheme] = useThemeSwitcher();
+  const [activeTheme, setTheme] = useThemeSwitcher();
 
   function showHireMeModal() {
     if (!showModal) {
