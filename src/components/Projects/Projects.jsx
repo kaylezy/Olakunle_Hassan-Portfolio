@@ -33,9 +33,9 @@ const Modal = ({ isOpen = false, onClose, projectId }) => {
 
         <div className="mb-6">
           <h3 className="text-xl font-semibold mb-2 text-white">
-            Technologies Used
+            Key Features
           </h3>
-          <p className="text-gray-300">{project.technologies}</p>
+          <p className="text-gray-300">{projectDetail.features}</p>
         </div>
 
         <div className="flex gap-4">
