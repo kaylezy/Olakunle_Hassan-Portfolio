@@ -1,84 +1,20 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import EasyServe from "../../assets/easyserve.jpg";
-import RenergyHub from "../../assets/renergyhub.jpg";
-import Upgrade from "../../assets/upgrade.jpg";
-import UrlShortening from "../../assets/UrlShorteningApp.jpg";
-import GitRepoVue from "../../assets/GitRepoVue.jpg";
-import Crowdfunding from "../../assets/crowdfund.jpg";
-
-const projects = [
-  {
-    id: 1,
-    name: "EasyServe",
-    description:
-      "It is a Url Shortening service that allows you to shorten any long Url to a manageable and user-friendly link. ",
-    technologies: "NextJs with typescrit and tailwindcss",
-    image: EasyServe,
-    github: "https://github.com/EasyServe3/EasyserveApp_PWA",
-    demo: "https://www.easyserve.com.ng/",
-  },
-  {
-    id: 2,
-    name: "RenergyHub",
-    description:
-      "A web application created to fetch the github repositories of users, built with vuejs",
-    technologies: "Vue Js and Javascript",
-    image: RenergyHub,
-    github:
-      "https://github.com/InternPulse/renergy-hub-frontend/tree/feature-base",
-    demo: "https://www.renergyhub.com.ng//",
-  },
-  {
-    id: 3,
-    name: "Upgrade Landing Page",
-    description:
-      "This project is a landing page for a crowdfunding platform, from frontend mentor.",
-    technologies: "React Js and Tailwindcss",
-    image: Upgrade,
-    github: "https://github.com/kaylezy/FinTech-Landing-Page",
-    demo: "https://fintech-landingpage.vercel.app/",
-  },
-  {
-    id: 4,
-    name: "CutFitt_URL",
-    description:
-      "It is a Url Shortening service that allows you to shorten any long Url to a manageable and user-friendly link. ",
-    technologies: "NextJs with typescrit and tailwindcss",
-    image: UrlShortening,
-    github: "https://github.com/kaylezy/CutFitt_URL/",
-    demo: "https://cutfitt-url.vercel.app/",
-  },
-  {
-    id: 5,
-    name: "Vue GitRepo",
-    description:
-      "A web application created to fetch the github repositories of users, built with vuejs",
-    technologies: "Vue Js and Javascript",
-    image: GitRepoVue,
-    github: "https://github.com/kaylezy/vue-github-repo-fetch",
-    demo: "https://vue-github-repo-fetch.netlify.app/",
-  },
-  {
-    id: 6,
-    name: "Crowdfunding Landing Page",
-    description:
-      "This project is a landing page for a crowdfunding platform, from frontend mentor.",
-    technologies: "React Js and Tailwindcss",
-    image: Crowdfunding,
-    github: "https://github.com/kaylezy/crowdfunding",
-    demo: "https://crowdfunding-lyart-beta.vercel.app/",
-  },
-];
-
+import { projects, projectDetails } from "../../hooks/projectDetails";
 import PropTypes from "prop-types";
 
-const Modal = ({ isOpen, onClose, project }) => {
-  if (!isOpen) return null;
+const Modal = ({ isOpen = false, onClose, projectId }) => {
+  if (!isOpen || !projectId) return null;
+
+  const projectDetail = projectDetails[projectId];
+  const project = projects.find((p) => p.id === projectId);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-      <div className="bg-gray-800 p-8 rounded-lg max-w-2xl w-full mx-4 relative">
+      <div
+        className="bg-gray-800 p-8 rounded-lg max-w-3xl  mx-4 relative overflow-y-auto"
+        style={{ maxHeight: "90vh" }}
+      >
         <button
           onClick={onClose}
           className="absolute top-2 right-10 text-gray-200 hover:text-white"
@@ -93,7 +29,7 @@ const Modal = ({ isOpen, onClose, project }) => {
         />
 
         <h2 className="text-3xl font-bold mb-4 text-white">{project.name}</h2>
-        <p className="text-gray-300 mb-4">{project.description}</p>
+        <p className="text-gray-300 mb-4">{projectDetail.description}</p>
 
         <div className="mb-6">
           <h3 className="text-xl font-semibold mb-2 text-white">
@@ -124,23 +60,14 @@ const Modal = ({ isOpen, onClose, project }) => {
     </div>
   );
 };
-
 Modal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
-  project: PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    description: PropTypes.string,
-    technologies: PropTypes.string,
-    image: PropTypes.string,
-    github: PropTypes.string,
-    demo: PropTypes.string,
-  }).isRequired,
+  projectId: PropTypes.number,
 };
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
 
   return (
     <div className="bg-slate-900 text-gray-300 py-20" id="projects">
@@ -171,7 +98,7 @@ const Projects = () => {
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
                 <button
-                  onClick={() => setSelectedProject(project)}
+                  onClick={() => setSelectedProjectId(project.id)}
                   className="text-blue-400 font-semibold text-sm hover:bg-gradient-to-r from-blue-400 to-indigo-500 px-4 py-2 rounded-full hover:text-white"
                 >
                   Details
@@ -202,9 +129,9 @@ const Projects = () => {
         </motion.div>
 
         <Modal
-          isOpen={!!selectedProject}
-          onClose={() => setSelectedProject(null)}
-          project={selectedProject}
+          isOpen={!!selectedProjectId}
+          onClose={() => setSelectedProjectId(null)}
+          projectId={selectedProjectId}
         />
       </div>
     </div>
