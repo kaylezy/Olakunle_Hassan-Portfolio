@@ -7,6 +7,7 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import ScrollReveal from "./hooks/scrollView";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
@@ -25,11 +26,21 @@ function App() {
       <div className="bg-gray-900 text-white">
         <ErrorBoundary>
           <Navbar toggleTheme={toggleTheme} />
-          <Hero />
-          <About />
-          <Projects />
-          <Contact />
-          <Footer />
+          <ScrollReveal>
+            <Hero />
+          </ScrollReveal>
+          <ScrollReveal>
+            <About />
+          </ScrollReveal>
+          <ScrollReveal>
+            <Projects />
+          </ScrollReveal>
+          <ScrollReveal>
+            <Contact />
+          </ScrollReveal>
+          <ScrollReveal>
+            <Footer />
+          </ScrollReveal>
         </ErrorBoundary>
       </div>
     </>
