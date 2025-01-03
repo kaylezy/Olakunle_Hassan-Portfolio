@@ -135,7 +135,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
                 )}
                 {status === "ERROR" && (
                   <p className="text-red-500 text-center">
-                    Oops! There was an error.
+                    Oops! There was an error, Please try again.
                   </p>
                 )}
               </form>

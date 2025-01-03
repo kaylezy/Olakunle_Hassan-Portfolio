@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { FaEnvelope, FaMapMarkedAlt, FaPhone } from "react-icons/fa";
 import Button from "../reusable/Button";
 import FormInput from "../reusable/FormInput";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { BsTwitterX } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { useForm, ValidationError } from "@formspree/react";
 
 const socialLinks = [
   {
@@ -25,26 +25,15 @@ const socialLinks = [
 ];
 
 const Contact = () => {
-  const [status, setStatus] = useState("");
-
-  const submitForm = (ev) => {
-    ev.preventDefault();
-    const form = ev.target;
-    const data = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    xhr.open(form.method, form.action, true);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== XMLHttpRequest.DONE) return;
-      if (xhr.status === 200) {
-        form.reset();
-        setStatus("SUCCESS");
-      } else {
-        setStatus("ERROR");
-      }
-    };
-    xhr.send(data);
-  };
+  const [state, handleSubmit] = useForm("xyzzbkkj", {
+    headers: {
+      Accept: "application/json",
+      Origin: window.location.origin,
+    },
+    config: {
+      mode: "cors",
+    },
+  });
 
   return (
     <div className="bg-gray-950 text-gray-300 py-20" id="contact">
@@ -171,85 +160,130 @@ const Contact = () => {
           </div>
           <div className="flex-1 w-full">
             <div className="leading-loose">
-              <motion.form
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  ease: "easeInOut",
-                  duration: 0.9,
-                  delay: 1,
-                }}
-                onSubmit={submitForm}
-                action="https://formspree.io/f/xovazewp"
-                method="POST"
-                className="space-y-4"
-              >
-                <FormInput
-                  inputLabel="Full Name"
-                  labelFor="name"
-                  inputType="text"
-                  inputId="name"
-                  inputName="name"
-                  placeholderText="Your Name"
-                  ariaLabelName="Name"
-                />
-                <FormInput
-                  inputLabel="Email"
-                  labelFor="email"
-                  inputType="email"
-                  inputId="email"
-                  inputName="email"
-                  placeholderText="Your email"
-                  ariaLabelName="Email"
-                />
-                <FormInput
-                  inputLabel="Subject"
-                  labelFor="subject"
-                  inputType="text"
-                  inputId="subject"
-                  inputName="subject"
-                  placeholderText="Subject"
-                  ariaLabelName="Subject"
-                />
-
-                <div>
-                  <label htmlFor="message" className="block mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    className="w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none
-                    focus:border-indigo-500"
-                    name="message"
-                    cols="14"
-                    rows="6"
-                    aria-label="Message"
-                    placeholder="Type Your Message"
+              {state.succeeded ? (
+                <motion.p
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    ease: "easeInOut",
+                    duration: 0.9,
+                    delay: 0.3,
+                  }}
+                  className="text-green-500 text-center text-xl font-bold"
+                >
+                  Thank you for reaching out! 👍🏽 I&apos;ll respond to your
+                  message soon.
+                </motion.p>
+              ) : (
+                <motion.form
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    ease: "easeInOut",
+                    duration: 0.9,
+                    delay: 1,
+                  }}
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
+                  <FormInput
+                    inputLabel="Full Name"
+                    labelFor="name"
+                    inputType="text"
+                    inputId="name"
+                    inputName="name"
+                    placeholderText="Your Name"
+                    ariaLabelName="Name"
                     required
                   />
-                </div>
-                <div
-                  className="bg-gradient-to-r from-blue-400 to-indigo-500 text-center text-white md:inline
-            transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-lg"
-                >
-                  <Button
-                    title="Send Message"
-                    type="submit"
-                    aria-label="Send Message"
+                  <ValidationError
+                    prefix="Name"
+                    field="name"
+                    errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
                   />
-                </div>
-                {status === "SUCCESS" && (
-                  <p className="text-green-500 text-center">
-                    Thank you for reaching out! 👍🏽 I&apos;ll respond to your
-                    message soon.
-                  </p>
-                )}
-                {status === "ERROR" && (
-                  <p className="text-red-500 text-center">
-                    Oops! There was an error.
-                  </p>
-                )}
-              </motion.form>
+
+                  <FormInput
+                    inputLabel="Email"
+                    labelFor="email"
+                    inputType="email"
+                    inputId="email"
+                    inputName="email"
+                    placeholderText="Your email"
+                    ariaLabelName="Email"
+                    required
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
+                  />
+
+                  <FormInput
+                    inputLabel="Subject"
+                    labelFor="subject"
+                    inputType="text"
+                    inputId="subject"
+                    inputName="subject"
+                    placeholderText="Subject"
+                    ariaLabelName="Subject"
+                    required
+                  />
+                  <ValidationError
+                    prefix="Subject"
+                    field="subject"
+                    errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
+                  />
+
+                  <div>
+                    <label htmlFor="message" className="block mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      className="w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none
+                      focus:border-indigo-500"
+                      name="message"
+                      cols="14"
+                      rows="6"
+                      aria-label="Message"
+                      placeholder="Type Your Message"
+                      required
+                    />
+                    <ValidationError
+                      prefix="Message"
+                      field="message"
+                      errors={state.errors}
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+
+                  {state.errors && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="text-red-500 text-center py-2 rounded"
+                    >
+                      Oops! There was an error submitting the form. Please check
+                      your inputs and try again.
+                    </motion.div>
+                  )}
+
+                  <div
+                    className="bg-gradient-to-r from-blue-400 to-indigo-500 text-center text-white md:inline
+              transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-lg"
+                  >
+                    <Button
+                      title={state.submitting ? "Sending..." : "Send Message"}
+                      type="submit"
+                      disabled={state.submitting}
+                      aria-label="Send Message"
+                    />
+                  </div>
+                </motion.form>
+              )}
             </div>
           </div>
         </div>
