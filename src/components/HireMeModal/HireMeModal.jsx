@@ -3,12 +3,25 @@ import { FiX } from "react-icons/fi";
 import Button from "../../components/reusable/Button";
 import { useForm, ValidationError } from "@formspree/react";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
 const selectOptions = ["Web Application", "Mobile Application", "Branding"];
 
 const HireMeModal = ({ onClose }) => {
   const [state, handleSubmit] = useForm("xyzzbkkj");
 
+  const resetForm = () => {
+    const form = document.getElementById("contact-form");
+    if (form) form.reset();
+  };
+
+  useEffect(() => {
+    if (state.succeeded) {
+      resetForm();
+      // Optional: Close modal after delay
+      setTimeout(() => onClose(), 3000);
+    }
+  }, [state.succeeded, onClose]);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -16,7 +29,7 @@ const HireMeModal = ({ onClose }) => {
       exit={{ opacity: 0 }}
       className="font-general-medium fixed inset-0 z-30 transition-all duration-500"
     >
-      <div className="bg-filter bg-black bg-opacity-70 fixed inset-0 w-full h-full z-20" />
+      <div className="bg-filter bg-slate-950 bg-opacity-90 fixed inset-0 w-full h-full z-20" />
       <main className="flex flex-col items-center justify-center h-full w-full">
         <div className="modal-wrapper flex items-center z-30">
           <div className="modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-dark max-h-screen shadow-lg flex-row rounded-lg relative">
@@ -107,10 +120,10 @@ const HireMeModal = ({ onClose }) => {
                     className="text-red-500 text-sm mt-1"
                   />
                 </div>
-                <div className="mt-6 pb-4 sm:pb-1">
+                <div className="mt-6 pb-4 sm:pb-1 hover:shadow-lg">
                   <Button
                     type="submit"
-                    title="Send Message"
+                    title={state.submitting ? "Sending..." : "Send Message"}
                     className="px-4 sm:px-6 py-2 sm:py-2.5 text-white bg-indigo-500 hover:bg-indigo-600 rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
                     aria-label="Submit Request"
                   />
