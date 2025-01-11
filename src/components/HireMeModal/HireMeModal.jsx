@@ -19,7 +19,7 @@ const HireMeModal = ({ onClose }) => {
     if (state.succeeded) {
       resetForm();
       // Optional: Close modal after delay
-      setTimeout(() => onClose(), 5000);
+      setTimeout(() => onClose(), 3000);
     }
   }, [state.succeeded, onClose]);
   return (

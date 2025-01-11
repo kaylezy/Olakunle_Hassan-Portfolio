@@ -23,22 +23,22 @@ const Navbar = ({ toggleTheme }) => {
               </span>
             </a>
           </div>
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-6 border rounded-full px-6 py-2 border-indigo-500 dark:border-purple-500">
             <a
               href="#about"
-              className="text-gray-900 dark:text-white hover:text-purple-500"
+              className="text-gray-900 dark:text-white hover:text-purple-500 focus:border-b-2 border-b-indigo-400"
             >
               About Me
             </a>
             <a
               href="#projects"
-              className="text-gray-900 dark:text-white hover:text-purple-500"
+              className="text-gray-900 dark:text-white hover:text-purple-500 focus:border-b-2 border-b-indigo-400"
             >
               Projects
             </a>
             <a
               href="#contact"
-              className="text-gray-900 dark:text-white hover:text-purple-500"
+              className="text-gray-900 dark:text-white hover:text-purple-500 focus:border-b-2 border-b-indigo-400"
             >
               Contact Me
             </a>
@@ -54,22 +54,23 @@ const Navbar = ({ toggleTheme }) => {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden space-y-4 p-4">
           <a
             href="#about"
-            className="block px-2 py-1 text-sm text-gray-900 dark:text-white"
+           className="block text-gray-900 dark:text-white hover:text-purple-500 focus:border-b-2 border-b-indigo-400 w-20"
           >
             About Me
           </a>
           <a
             href="#projects"
-            className="block px-2 py-1 text-sm text-gray-900 dark:text-white"
+            className="block text-gray-900 dark:text-white hover:text-purple-500 focus:border-b-2 border-b-indigo-400 w-16"
           >
             Projects
           </a>
           <a
             href="#contact"
-            className="block px-2 py-1 text-sm text-gray-900 dark:text-white"
+            className="block text-gray-900 dark:text-white hover:text-purple-500 focus:border-b-2 border-b-indigo-400 w-24"
+            
           >
             Contact Me
           </a>
