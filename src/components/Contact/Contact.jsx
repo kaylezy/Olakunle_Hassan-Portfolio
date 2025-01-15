@@ -147,7 +147,7 @@ const Contact = () => {
                       target="__blank"
                       key={link.id}
                       className="text-3xl pt-6 font-bold bg-clip-text bg-gradient-to-r 
-            from-blue-400 to-indigo-500 mb-4"
+            from-blue-400 to-indigo-500 mb-4 animate-bounce"
                     >
                       <i className="text-xl sm:text-2xl md:text-3xl">
                         {link.icon}
