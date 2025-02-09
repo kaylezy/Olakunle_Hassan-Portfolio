@@ -36,7 +36,7 @@ const LoadingScreen = () => {
             </span>
           </div>
           <motion.div
-            className="text-gray-100 text-4xl font-bold"
+            className="text-gray-100 lg:text-4xl text-2xl font-bold"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
