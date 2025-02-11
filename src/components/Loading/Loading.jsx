@@ -24,14 +24,14 @@ const LoadingScreen = () => {
           exit={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className="flex justify-center items-center text-2xl">
+          <div className="flex justify-center items-center text-2xl animate-bounce">
             <img
               src={Logo}
               alt="logo"
-              className="h-10 w-10 rounded-md mr-2 animate-pulse"
+              className="h-10 w-10 rounded-md mr-2"
             ></img>
 
-            <span className="text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse">
+            <span className="text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-400 to-purple-500">
               Dev-Kngkay
             </span>
           </div>
