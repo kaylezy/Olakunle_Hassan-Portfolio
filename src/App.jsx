@@ -9,6 +9,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import ScrollReveal from "./hooks/scrollView";
 import Loading from "./components/Loading/Loading";
+// import { SparklesPreview } from "./components/AceternityUI/SparklesEffect/SparklesEffects";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
@@ -27,6 +28,7 @@ function App() {
       <div className="bg-gray-900 text-white">
         <ErrorBoundary>
           <Navbar toggleTheme={toggleTheme} />
+            {/* <SparklesPreview /> */}
           <Loading />
           <ScrollReveal>
             <Hero />
