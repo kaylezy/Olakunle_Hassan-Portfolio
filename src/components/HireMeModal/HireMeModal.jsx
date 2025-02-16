@@ -27,7 +27,7 @@ const HireMeModal = ({ onClose }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="font-general-medium fixed inset-0 z-30 transition-all duration-500"
+      className="font-general-medium fixed inset-0 z-30 transition-all duration-500 pt-28"
     >
       <div className="bg-filter bg-slate-950 bg-opacity-90 fixed inset-0 w-full h-full z-20" />
       <main className="flex flex-col items-center justify-center h-full w-full">
@@ -120,7 +120,7 @@ const HireMeModal = ({ onClose }) => {
                     className="text-red-500 text-sm mt-1"
                   />
                 </div>
-                <div className="mt-6 pb-4 sm:pb-1 hover:shadow-lg">
+                <div className="mt-6  sm:pb-1 hover:shadow-lg bg-indigo-500 dark:bg-ternary-dark rounded-md text-center py-2 sm:py-2.5">
                   <Button
                     type="submit"
                     title={state.submitting ? "Sending..." : "Send Message"}
