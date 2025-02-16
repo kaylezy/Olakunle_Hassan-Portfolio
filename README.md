@@ -13,7 +13,7 @@ When I'm not coding, I enjoy staying updated with the latest industry trends, le
 ## Skills
 
 - **Languages**: JavaScript, TypeScript, HTML, CSS
-- **Frameworks/Libraries**: React, NextJs, Vuejs, Tailwind CSS
+- **Frameworks/Libraries**: React, NextJs, Vuejs, Tailwind CSS and AceternityUI for motion display
 - **Tools**: Git, Firebase, Progressive Web Applications (PWAs)
 - **Other**: Responsive Design, Accessibility, Performance Optimization
 
