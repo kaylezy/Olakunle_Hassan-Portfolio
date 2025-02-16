@@ -27,7 +27,7 @@ importers:
         specifier: ^11.3.28
         version: 11.3.28(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       motion:
-        specifier: ^12.4.2
+        specifier: ^12.4.3
         version: 12.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       prop-types:
         specifier: ^15.8.1
