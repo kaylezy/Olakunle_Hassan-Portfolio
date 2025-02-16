@@ -76,7 +76,7 @@ const Navbar = ({ toggleTheme }) => {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden space-y-4 p-4">
+        <div className="md:hidden space-y-4 p-4 bg-white dark:bg-gray-800">
           <a
             href="#about"
             className="block text-gray-900 dark:text-white hover:text-purple-500 focus:border-b-2 border-b-indigo-400 w-20"
