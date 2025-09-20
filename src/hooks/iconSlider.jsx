@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
-import { FaHtml5 } from "react-icons/fa6";
-import { IoLogoCss3 } from "react-icons/io5";
-import { SiJavascript } from "react-icons/si";
-import { BsBootstrapFill } from "react-icons/bs";
-import { FaReact } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
-import { IoLogoVue } from "react-icons/io5";
-import { SiTypescript } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
-import { SiFirebase } from "react-icons/si";
-import { SiCloudinary } from "react-icons/si";
-import { SiShadcnui } from "react-icons/si";
-import { motion } from "framer-motion";
+import { FaHtml5 } from 'react-icons/fa6';
+import { IoLogoCss3 } from 'react-icons/io5';
+import { SiJavascript } from 'react-icons/si';
+import { BsBootstrapFill } from 'react-icons/bs';
+import { FaReact } from 'react-icons/fa';
+import { SiTailwindcss } from 'react-icons/si';
+import { IoLogoVue } from 'react-icons/io5';
+import { SiTypescript } from 'react-icons/si';
+import { TbBrandNextjs } from 'react-icons/tb';
+import { SiFirebase } from 'react-icons/si';
+import { SiCloudinary } from 'react-icons/si';
+import { SiShadcnui } from 'react-icons/si';
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const icons = [
   [
@@ -39,7 +39,7 @@ const IconSlider = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % icons.length);
+      setCurrentIndex(prevIndex => (prevIndex + 1) % icons.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -48,18 +48,17 @@ const IconSlider = () => {
     <div className="relative w-full h-24 overflow-hidden">
       {icons.map((iconSet, index) => (
         <motion.div
-          
           key={index}
           className={`absolute w-[350px] h-full flex items-center justify-center transition-opacity duration-1000 ${
-            index === currentIndex ? "opacity-100" : "opacity-0"
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {iconSet.map((icon) => (
+          {iconSet.map(icon => (
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                ease: "easeInOut",
+                ease: 'easeInOut',
                 duration: 0.9,
                 delay: 0.3,
               }}

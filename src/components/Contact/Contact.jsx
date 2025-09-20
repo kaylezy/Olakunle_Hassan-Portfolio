@@ -1,39 +1,38 @@
-import { FaEnvelope, FaMapMarkedAlt, FaPhone } from "react-icons/fa";
-import Button from "../reusable/Button";
-import FormInput from "../reusable/FormInput";
-import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { BsTwitterX } from "react-icons/bs";
-import { motion } from "framer-motion";
-import { useForm, ValidationError } from "@formspree/react";
+/**
+ * Contact Component
+ *
+ * A contact form component with social links and contact information.
+ * Features form validation, animations, and responsive design.
+ *
+ * @component
+ * @returns {JSX.Element} Contact component
+ */
 
-const socialLinks = [
-  {
-    id: 1,
-    icon: <FiGithub />,
-    url: "https://github.com/kaylezy",
-  },
-  {
-    id: 2,
-    icon: <BsTwitterX />,
-    url: "https://twitter.com/iam_kaylezy",
-  },
-  {
-    id: 3,
-    icon: <FiLinkedin />,
-    url: "https://www.linkedin.com/in/olakunle-hassan",
-  },
-];
+import { FaEnvelope, FaMapMarkedAlt, FaPhone } from 'react-icons/fa';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
+import { BsTwitterX } from 'react-icons/bs';
+import { motion } from 'framer-motion';
+
+// Components
+import Button from '../reusable/Button';
+import FormInput from '../reusable/FormInput';
+
+// Constants
+import { SOCIAL_LINKS, CONTACT_INFO } from '../../constants/projects';
+
+// Hooks
+import useContactForm from '../../hooks/useContactForm';
+
+// Social icon mapping
+const SOCIAL_ICONS = {
+  github: <FiGithub />,
+  twitter: <BsTwitterX />,
+  linkedin: <FiLinkedin />,
+};
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("xyzzbkkj", {
-    headers: {
-      Accept: "application/json",
-      Origin: window.location.origin,
-    },
-    config: {
-      mode: "cors",
-    },
-  });
+  const { state, handleSubmit, isDevelopment, isSimulated, ValidationError } =
+    useContactForm();
 
   return (
     <div className="bg-gray-950 text-gray-300 py-20" id="contact">
@@ -42,7 +41,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            ease: "linear",
+            ease: 'linear',
             duration: 0.9,
             delay: 0.3,
           }}
@@ -56,7 +55,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                ease: "easeInOut",
+                ease: 'easeInOut',
                 duration: 0.9,
                 delay: 0.3,
               }}
@@ -69,7 +68,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                ease: "easeInOut",
+                ease: 'easeInOut',
                 duration: 0.9,
                 delay: 0.5,
               }}
@@ -83,52 +82,59 @@ const Contact = () => {
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                ease: "easeInOut",
+                ease: 'easeInOut',
                 duration: 0.9,
                 delay: 0.8,
               }}
               className="mb-4 mt-8"
             >
-              <FaEnvelope className="inline-block text-indigo-400 mr-2"></FaEnvelope>
+              <FaEnvelope className="inline-block text-indigo-400 mr-2" />
               <a
-                href="mailto:kunlex_042003@yahoo.com"
-                className="hover:underline"
+                href={`mailto:${CONTACT_INFO.email}`}
+                className="hover:underline transition-colors duration-200"
+                aria-label={`Send email to ${CONTACT_INFO.email}`}
               >
-                kunlex_042003@yahoo.com
+                {CONTACT_INFO.email}
               </a>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                ease: "easeInOut",
+                ease: 'easeInOut',
                 duration: 0.9,
                 delay: 1,
               }}
               className="mb-4"
             >
-              <FaPhone className="inline-block text-indigo-400 mr-2"></FaPhone>
-              <span>+234 802 9732 493</span>
+              <FaPhone className="inline-block text-indigo-400 mr-2" />
+              <a
+                href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}
+                className="hover:underline transition-colors duration-200"
+                aria-label={`Call ${CONTACT_INFO.phone}`}
+              >
+                {CONTACT_INFO.phone}
+              </a>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                ease: "easeInOut",
+                ease: 'easeInOut',
                 duration: 0.9,
                 delay: 1.2,
               }}
               className="mb-4"
             >
-              <FaMapMarkedAlt className="inline-block text-indigo-400 mr-2"></FaMapMarkedAlt>
-              <span>Abule-Egba, Lagos, Nigeria</span>
+              <FaMapMarkedAlt className="inline-block text-indigo-400 mr-2" />
+              <span>{CONTACT_INFO.location}</span>
             </motion.div>
             <div id="socials" className="mt-20">
               <motion.div
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                   duration: 0.9,
                   delay: 1.4,
                 }}
@@ -141,16 +147,17 @@ const Contact = () => {
                   Follow me
                 </p>
                 <ul className="flex gap-10 sm:gap-10">
-                  {socialLinks.map((link) => (
+                  {SOCIAL_LINKS.map(link => (
                     <a
                       href={link.url}
-                      target="__blank"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       key={link.id}
-                      className="text-3xl pt-6 font-bold bg-clip-text bg-gradient-to-r 
-            from-blue-400 to-indigo-500 mb-4 animate-bounce"
+                      className="text-3xl pt-6 font-bold bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 mb-4 animate-bounce hover:scale-110 transition-transform duration-200"
+                      aria-label={link.label}
                     >
                       <i className="text-xl sm:text-2xl md:text-3xl">
-                        {link.icon}
+                        {SOCIAL_ICONS[link.icon]}
                       </i>
                     </a>
                   ))}
@@ -165,21 +172,38 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    ease: "easeInOut",
+                    ease: 'easeInOut',
                     duration: 0.9,
                     delay: 0.3,
                   }}
                   className="text-green-500 text-center text-xl font-bold"
                 >
-                  Thank you for reaching out! 👍🏽 I&apos;ll respond to your
-                  message soon.
+                  {isDevelopment && isSimulated ? (
+                    <>
+                      Message sent successfully! 🎉
+                      <br />
+                      <span className="text-sm text-gray-400">
+                        (Simulation mode - In production, this would be sent to
+                        your email)
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      Message sent successfully! ✅
+                      <br />
+                      <span className="text-sm text-gray-400">
+                        Thank you for contacting me. I&apos;ll get back to you
+                        within 24 hours.
+                      </span>
+                    </>
+                  )}
                 </motion.p>
               ) : (
                 <motion.form
                   initial={{ opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{
-                    ease: "easeInOut",
+                    ease: 'easeInOut',
                     duration: 0.9,
                     delay: 1,
                   }}
@@ -260,28 +284,41 @@ const Contact = () => {
                     />
                   </div>
 
-                  {state.errors && (
+                  {state.errors && state.errors.length > 0 && (
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="text-red-500 text-center py-2 rounded"
+                      className="text-red-500 text-center py-2 rounded bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800"
                     >
-                      Oops! There was an error submitting the form. Please check
-                      your inputs and try again.
+                      <div>
+                        <p className="font-semibold mb-2">
+                          Unable to send message
+                        </p>
+                        <p className="text-sm">
+                          There was a problem submitting your message. Please
+                          check your information and try again, or contact me
+                          directly at <strong>kunlex_042003@yahoo.com</strong>
+                        </p>
+                      </div>
                     </motion.div>
                   )}
 
-                  <div
-                    className="bg-gradient-to-r from-blue-400 to-indigo-500 text-center text-white md:inline
-              transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-lg"
-                  >
-                    <Button
-                      title={state.submitting ? "Sending..." : "Send Message"}
-                      type="submit"
-                      disabled={state.submitting}
-                      aria-label="Send Message"
-                    />
-                  </div>
+                  {isDevelopment && !isSimulated && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                    ></motion.div>
+                  )}
+
+                  <Button
+                    title={
+                      state.submitting ? 'Sending message...' : 'Send Message'
+                    }
+                    type="submit"
+                    disabled={state.submitting}
+                    aria-label="Send Message"
+                    className="w-full md:w-auto"
+                  />
                 </motion.form>
               )}
             </div>

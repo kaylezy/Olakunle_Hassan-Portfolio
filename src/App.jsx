@@ -1,53 +1,115 @@
-// src/App.jsx
-import { useEffect, useState } from "react";
-import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
-import Hero from "./components/Hero/Hero";
-import Navbar from "./components/Navbar/Navbar";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import Contact from "./components/Contact/Contact";
-import Footer from "./components/Footer/Footer";
-import ScrollReveal from "./hooks/scrollView";
-import Loading from "./components/Loading/Loading";
+/**
+ * Main App Component
+ *
+ * This is the root component of the portfolio application.
+ * It manages the overall layout, theme state, and renders all main sections.
+ *
+ * @component
+ * @returns {JSX.Element} The main application component
+ */
 
+import { Suspense, lazy } from 'react';
 
-function App() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+// Components
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import Loading from './components/Loading/Loading';
 
-  useEffect(() => {
-    document.documentElement.className = theme;
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+// Lazy loaded components
+const Hero = lazy(() => import('./components/Hero/Hero'));
+const About = lazy(() => import('./components/About/About'));
+const Projects = lazy(() => import('./components/Projects/Projects'));
+const Contact = lazy(() => import('./components/Contact/Contact'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
+const Navbar = lazy(() => import('./components/Navbar/Navbar'));
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+// Skeleton components
+import {
+  HeroSkeleton,
+  AboutSkeleton,
+  ProjectsSkeleton,
+  ContactSkeleton,
+  SkeletonWrapper,
+} from './components/Skeletons';
+
+// Hooks
+import ScrollReveal from './hooks/scrollView';
+import useThemeSwitcher from './hooks/useThemeSwitcher';
+
+// Inner App component
+const AppContent = () => {
+  const [, , toggleTheme] = useThemeSwitcher();
 
   return (
-    <>
-      <div className="bg-gray-900 text-white">
-        <ErrorBoundary>
-          <Navbar toggleTheme={toggleTheme} />
-          <Loading />
+    <div className="bg-gray-900 text-white min-h-screen">
+      <ErrorBoundary>
+        <Suspense
+          fallback={<div className="h-16 bg-gray-700 animate-pulse"></div>}
+        >
+          <Navbar onToggleTheme={toggleTheme} />
+        </Suspense>
+        <Loading />
+
+        <main>
           <ScrollReveal>
-            <Hero />
+            <SkeletonWrapper
+              SkeletonComponent={HeroSkeleton}
+              skeletonDelay={600}
+            >
+              <Suspense fallback={<HeroSkeleton />}>
+                <Hero />
+              </Suspense>
+            </SkeletonWrapper>
           </ScrollReveal>
+
           <ScrollReveal>
-            <About />
+            <SkeletonWrapper
+              SkeletonComponent={AboutSkeleton}
+              skeletonDelay={800}
+            >
+              <Suspense fallback={<AboutSkeleton />}>
+                <About />
+              </Suspense>
+            </SkeletonWrapper>
           </ScrollReveal>
+
           <ScrollReveal>
-            <Projects />
+            <SkeletonWrapper
+              SkeletonComponent={ProjectsSkeleton}
+              skeletonDelay={1000}
+            >
+              <Suspense fallback={<ProjectsSkeleton />}>
+                <Projects />
+              </Suspense>
+            </SkeletonWrapper>
           </ScrollReveal>
+
           <ScrollReveal>
-            <Contact />
+            <SkeletonWrapper
+              SkeletonComponent={ContactSkeleton}
+              skeletonDelay={700}
+            >
+              <Suspense fallback={<ContactSkeleton />}>
+                <Contact />
+              </Suspense>
+            </SkeletonWrapper>
           </ScrollReveal>
-          <ScrollReveal>
+        </main>
+
+        <ScrollReveal>
+          <Suspense
+            fallback={<div className="h-32 bg-gray-700 animate-pulse"></div>}
+          >
             <Footer />
-          </ScrollReveal>
-        </ErrorBoundary>
-      </div>
-    </>
+          </Suspense>
+        </ScrollReveal>
+      </ErrorBoundary>
+    </div>
   );
+};
+
+// Main App component
+function App() {
+  return <AppContent />;
 }
 
 export default App;
