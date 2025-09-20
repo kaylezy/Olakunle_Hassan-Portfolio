@@ -37,15 +37,17 @@ import useThemeSwitcher from './hooks/useThemeSwitcher';
 
 // Inner App component
 const AppContent = () => {
-  const [, , toggleTheme] = useThemeSwitcher();
+  const systemTheme = useThemeSwitcher();
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen transition-colors duration-300">
       <ErrorBoundary>
         <Suspense
-          fallback={<div className="h-16 bg-gray-700 animate-pulse"></div>}
+          fallback={
+            <div className="h-16 bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+          }
         >
-          <Navbar onToggleTheme={toggleTheme} />
+          <Navbar />
         </Suspense>
         <Loading />
 
@@ -97,7 +99,9 @@ const AppContent = () => {
 
         <ScrollReveal>
           <Suspense
-            fallback={<div className="h-32 bg-gray-700 animate-pulse"></div>}
+            fallback={
+              <div className="h-32 bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
+            }
           >
             <Footer />
           </Suspense>

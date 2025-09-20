@@ -1,17 +1,20 @@
-import { motion } from "framer-motion";
-import HeroImage from "../../assets/imagebeach.jpg";
-import IconSlider from "../../hooks/iconSlider";
+import { motion } from 'framer-motion';
+import HeroImage from '../../assets/imagebeach.jpg';
+import IconSlider from '../../hooks/iconSlider';
 
 const About = () => {
   return (
-    <div id="about" className="bg-black text-white text-center py-20">
+    <div
+      id="about"
+      className="bg-gray-50 dark:bg-black text-gray-900 dark:text-white text-center py-20"
+    >
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
-              ease: "easeInOut",
+              ease: 'easeInOut',
               duration: 0.9,
               delay: 1,
             }}
@@ -25,13 +28,13 @@ const About = () => {
             />
           </motion.div>
 
-          <div className="flex-1 text-gray-300">
+          <div className="flex-1 text-gray-600 dark:text-gray-300">
             <div className="text-justify">
               <motion.h2
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                   duration: 0.9,
                   delay: 0.3,
                 }}
@@ -43,7 +46,7 @@ const About = () => {
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                   duration: 0.9,
                   delay: 0.5,
                 }}
@@ -64,7 +67,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                   duration: 0.9,
                   delay: 0.7,
                 }}
@@ -92,7 +95,7 @@ const About = () => {
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                   duration: 0.9,
                   delay: 0.3,
                 }}
@@ -107,7 +110,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                   duration: 0.9,
                   delay: 0.3,
                 }}

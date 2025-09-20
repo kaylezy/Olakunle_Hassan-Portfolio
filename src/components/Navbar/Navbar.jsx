@@ -5,13 +5,10 @@
  * Features sparkle effects and smooth animations.
  *
  * @component
- * @param {Object} props - Component props
- * @param {Function} props.onToggleTheme - Function to toggle theme
  * @returns {JSX.Element} Navigation bar component
  */
 
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { FiGithub } from 'react-icons/fi';
 import Logo from '../../../public/Dev-kngkay.png';
 import { SparklesCore } from '../AceternityUI/SparklesEffect/Sparkles';
@@ -26,7 +23,7 @@ const NAVIGATION_LINKS = [
 // Social links configuration
 const GITHUB_URL = 'https://github.com/kaylezy';
 
-const Navbar = ({ onToggleTheme }) => {
+const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   /**
@@ -159,10 +156,6 @@ const Navbar = ({ onToggleTheme }) => {
       )}
     </nav>
   );
-};
-
-Navbar.propTypes = {
-  onToggleTheme: PropTypes.func.isRequired,
 };
 
 export default Navbar;

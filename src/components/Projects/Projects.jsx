@@ -1,20 +1,20 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { projects, projectDetails } from "../../hooks/projectDetails";
-import PropTypes from "prop-types";
-import { BackgroundGradient } from "../AceternityUI/BackgroundGradient/BackgroundGradientEffect";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { projects, projectDetails } from '../../hooks/projectDetails';
+import PropTypes from 'prop-types';
+import { BackgroundGradient } from '../AceternityUI/BackgroundGradient/BackgroundGradientEffect';
 
 const Modal = ({ isOpen = false, onClose, projectId }) => {
   if (!isOpen || !projectId) return null;
 
   const projectDetail = projectDetails[projectId];
-  const project = projects.find((p) => p.id === projectId);
+  const project = projects.find(p => p.id === projectId);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
       <div
         className="bg-gray-800 p-8 rounded-lg max-w-3xl mx-4 relative overflow-y-auto"
-        style={{ maxHeight: "90vh" }}
+        style={{ maxHeight: '90vh' }}
       >
         <button
           onClick={onClose}
@@ -71,7 +71,10 @@ const Projects = () => {
   const [selectedProjectId, setSelectedProjectId] = useState(null);
 
   return (
-    <div className="bg-slate-900 text-gray-300 py-20" id="projects">
+    <div
+      className="bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 py-20"
+      id="projects"
+    >
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
           Some of the Projects I worked on
@@ -85,7 +88,7 @@ const Projects = () => {
           animate="show"
           className="slider container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {projects.map((project) => (
+          {projects.map(project => (
             <BackgroundGradient
               key={project.id}
               className="rounded-[22px]  p-4 sm:p-10 bg-white dark:bg-zinc-900 w-full h-full"
@@ -108,7 +111,9 @@ const Projects = () => {
                     Details
                   </button>
                 </div>
-                <p className="text-gray-400 mb-2 flex-grow">{project.description}</p>
+                <p className="text-gray-400 mb-2 flex-grow">
+                  {project.description}
+                </p>
                 <p className="text-gray-400 mb-4">{project.technologies}</p>
                 <div className="flex justify-center space-x-24">
                   <a

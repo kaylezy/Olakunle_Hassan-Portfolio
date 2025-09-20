@@ -35,7 +35,10 @@ const Contact = () => {
     useContactForm();
 
   return (
-    <div className="bg-gray-950 text-gray-300 py-20" id="contact">
+    <div
+      className="bg-gray-100 dark:bg-gray-950 text-gray-700 dark:text-gray-300 py-20"
+      id="contact"
+    >
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <motion.h2
           initial={{ opacity: 0, y: -100 }}
