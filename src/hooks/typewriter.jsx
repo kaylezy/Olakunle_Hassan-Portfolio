@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const Typewriter = ({ text }) => {
-  const [displayedText, setDisplayedText] = useState("");
+  const [displayedText, setDisplayedText] = useState('');
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -30,13 +30,7 @@ const Typewriter = ({ text }) => {
     return () => clearTimeout(timeout);
   }, [index, isDeleting, text]);
 
-  return (
-    <div className="typewriter">
-      <h1 className="text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-400 to-purple-500">
-        {displayedText}
-      </h1>
-    </div>
-  );
+  return displayedText;
 };
 
 export default Typewriter;

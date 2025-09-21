@@ -12,7 +12,7 @@
 
 import { motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 // Components
@@ -32,6 +32,28 @@ const HireMeModal = ({ onClose }) => {
     if (form) form.reset();
   };
 
+  // Handle escape key press
+  const handleKeyDown = useCallback(
+    e => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    },
+    [onClose]
+  );
+
+  // Prevent body scroll and handle keyboard events
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleKeyDown]);
+
   useEffect(() => {
     if (state.succeeded) {
       resetForm();
@@ -45,12 +67,12 @@ const HireMeModal = ({ onClose }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="font-general-medium fixed inset-0 z-30 transition-all duration-500 pt-28"
+      className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4"
     >
-      <div className="bg-filter bg-slate-950 bg-opacity-90 fixed inset-0 w-full h-full z-20" />
+      <div className="bg-filter bg-slate-950 bg-opacity-50 fixed inset-0 w-full h-full z-20" />
       <main className="flex flex-col items-center justify-center h-full w-full">
-        <div className="modal-wrapper flex items-center z-30">
-          <div className="modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-white dark:bg-gray-800 max-h-screen shadow-2xl flex-row rounded-xl relative border border-gray-200 dark:border-gray-700">
+        <div className="modal-wrapper flex items-center z-30 mt-16">
+          <div className="modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-white dark:bg-gray-800 max-h-[90vh] shadow-2xl flex-row rounded-xl relative border border-gray-200 dark:border-gray-700 overflow-y-auto">
             <div className="modal-header flex justify-between items-center gap-4 p-6 border-b border-gray-200 dark:border-gray-700">
               <h5 className="text-gray-900 dark:text-white text-xl font-semibold">
                 What project are you looking for?

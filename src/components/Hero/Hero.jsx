@@ -13,20 +13,6 @@ const AppBanner = () => {
   const [showModal, setShowModal] = useState(false);
   const [activeTheme] = useThemeSwitcher();
 
-  function showHireMeModal() {
-    if (!showModal) {
-      document
-        .getElementsByTagName('html')[0]
-        .classList.add('overflow-y-hidden');
-      setShowModal(true);
-    } else {
-      document
-        .getElementsByTagName('html')[0]
-        .classList.remove('overflow-y-hidden');
-      setShowModal(false);
-    }
-  }
-
   return (
     <AuroraBackground>
       <motion.section
@@ -46,9 +32,8 @@ const AppBanner = () => {
             }}
             className="font-general-semibold text-2xl lg:text-3xl xl:text-5xl text-center sm:text-left text-gray-800 dark:text-gray-100 uppercase"
           >
-            Hi 👋🏽, I&apos;m
-            <span className="text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-400 to-purple-500">
-              {' '}
+            <div className="block">Hi 👋🏽, I&apos;m</div>
+            <span className="text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-400 to-purple-500 block">
               <Typewriter text="Olakunle Hassan" />
             </span>
           </motion.h1>
@@ -120,7 +105,7 @@ const AppBanner = () => {
                 title="Hire Me"
                 variant="outline"
                 size="large"
-                onClick={showHireMeModal}
+                onClick={() => setShowModal(true)}
                 className="w-40 sm:w-44 bg-gray-300"
                 ariaLabel="Hire Me Button"
               />
@@ -140,13 +125,7 @@ const AppBanner = () => {
           />
         </motion.div>
         <div>
-          {showModal ? (
-            <HireMeModal
-              onClose={showHireMeModal}
-              onRequest={showHireMeModal}
-            />
-          ) : null}
-          {showModal ? showHireMeModal : null}
+          {showModal && <HireMeModal onClose={() => setShowModal(false)} />}
         </div>
       </motion.section>
     </AuroraBackground>

@@ -1,7 +1,7 @@
 // src/components/LoadingScreen.jsx
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Logo from "../../../public/Dev-kngkay.png";
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+// Logo will be referenced as a public asset
 
 const LoadingScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +26,7 @@ const LoadingScreen = () => {
         >
           <div className="flex justify-center items-center text-2xl animate-bounce">
             <img
-              src={Logo}
+              src="/Dev-kngkay.png"
               alt="logo"
               className="h-10 w-10 rounded-md mr-2"
             ></img>

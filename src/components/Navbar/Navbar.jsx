@@ -10,7 +10,7 @@
 
 import { useState } from 'react';
 import { FiGithub } from 'react-icons/fi';
-import Logo from '../../../public/Dev-kngkay.png';
+// Logo will be referenced as a public asset
 import { SparklesCore } from '../AceternityUI/SparklesEffect/Sparkles';
 
 // Navigation links configuration
@@ -52,7 +52,7 @@ const Navbar = () => {
               aria-label="Dev-Kngkay Portfolio Home"
             >
               <img
-                src={Logo}
+                src="/Dev-kngkay.png"
                 alt="Dev-Kngkay Logo"
                 className="h-10 w-10 rounded-md mr-2 animate-pulse"
                 width={40}
