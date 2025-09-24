@@ -77,7 +77,7 @@ const AppBanner = () => {
                 delay: 0.3,
               }}
               download="Olakunle_Hassan.pdf"
-              href="/files/Olakunle_Hassan.pdf"
+              href="/files/Olakunle-Hassan(1).pdf"
               aria-label="Download Resume"
             >
               <Button
