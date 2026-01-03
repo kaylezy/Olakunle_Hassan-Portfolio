@@ -76,10 +76,9 @@ const Contact = () => {
                 delay: 0.5,
               }}
             >
-              I&apos;m eager to explore web development collaborations and new
-              opportunities. Whether you have a specific project in mind or a
-              business concept to discuss, I&apos;m ready to engage promptly and
-              enthusiastically with the details of your proposal.
+              I&apos;m particularly excited about opportunities that leverage AI
+              to build scalable, user centric solutions that empower people and
+              businesses.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 100 }}

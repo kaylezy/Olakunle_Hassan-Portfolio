@@ -42,6 +42,7 @@ const About = () => {
               >
                 About Me:
               </motion.h2>
+
               <motion.p
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -55,12 +56,12 @@ const About = () => {
                 I&apos;m Olakunle Hassan, a Frontend Software Engineer
                 passionate about crafting beautiful and functional websites.
                 With experience in HTML, CSS, JavaScript, React, Tailwind CSS,
-                Vue.js, TypeScript, Next.js and Progressive Web Application
-                (PWA). I&apos;m constantly eager to learn new technologies and
-                enhance my skills. As a quick learner and collaborative team
-                player, I&apos;m always ready to embrace new challenges.
-                I&apos;m open to working with a talented team of developers and
-                contributing to exciting projects.
+                Vue.js, TypeScript, Next.js, and Progressive Web Applications
+                (PWA), I&apos;m also conversant with the use of AI tools and
+                frameworks to enhance user experiences, streamline workflows,
+                and build smarter digital solutions. I&apos;m constantly eager
+                to learn new technologies and embrace challenges that push the
+                boundaries of modern web development.
               </motion.p>
 
               <motion.p
@@ -119,8 +120,8 @@ const About = () => {
                 Tools:
               </motion.h2>
               <p className="text-lg mb-8 italic">
-                VSCode Editor, Git, Github, Vite, Figma, Sublime Text Editor,
-                CodeSandBox, CodePen .
+                VSCode Editor, Git, Github, ChatGPT, ClaudeAI, Copilot, Vite,
+                Figma, CodeSandBox, CodePen .
               </p>
             </div>
           </div>
